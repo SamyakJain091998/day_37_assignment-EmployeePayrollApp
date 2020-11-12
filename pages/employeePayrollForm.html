@@ -7,6 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600&display=swap" rel="stylesheet">
     <title>Employee payroll</title>
     <link rel="stylesheet" href="../css/employeePayrollForm.css" />
+    <script src="../js/employeePayrollForm.js"></script>
 </head>
 
 <body>
@@ -77,12 +78,14 @@
                     <label class="text" for="others">Others</label>
                 </div>
             </div>
+
             <div class="row-content">
                 <label class="label text" for="salary">Choose your salary: </label>
                 <input class="input" type="range" name="salary" id="salary" min="30000" max="60000" step="100"
                     value="40000">
                 <output class="salary-output text" for="salary">40000</output>
             </div>
+
             <div class="row-content">
                 <label class="label text" for="startDate">Start Date</label>
                 <div>
@@ -155,6 +158,15 @@
             </div>
         </form>
     </div>
+
+    <script>
+        const salary = document.querySelector('#salary');
+        const output = document.querySelector('.salary-output');
+        output.textContent = salary.value;
+        salary.addEventListener('input', function () {
+            output.textContent = salary.value;
+        });
+    </script>
 </body>
 
 </html>
