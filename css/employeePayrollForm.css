@@ -177,7 +177,7 @@ select{
 }
 
 .cancelButton:hover {
-    background-color: #42515F;
+    background-color: lightcoral;
     color: white;
 }
 
