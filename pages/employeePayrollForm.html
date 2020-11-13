@@ -7,7 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600&display=swap" rel="stylesheet">
     <title>Employee payroll</title>
     <link rel="stylesheet" href="../css/employeePayrollForm.css" />
-    <script src="../js/employeePayrollForm.js"></script>
+    <script src="../js/employeePayrollForm.js" defer></script>
 </head>
 
 <body>
@@ -158,15 +158,6 @@
             </div>
         </form>
     </div>
-
-    <script>
-        const salary = document.querySelector('#salary');
-        const output = document.querySelector('.salary-output');
-        output.textContent = salary.value;
-        salary.addEventListener('input', function () {
-            output.textContent = salary.value;
-        });
-    </script>
 </body>
 
 </html>
