@@ -113,15 +113,14 @@ const save = () => {
 
 function createAndUpdateStorage(employeePayrollData) {
     let employeePayrollList = JSON.parse(localStorage.getItem("EmployeePayrollList"));
-
     if (employeePayrollList != undefined) {
         employeePayrollList.push(employeePayrollData);
     } else {
-        localStorage.employeePayrollList = [employeePayrollData]
+        employeePayrollList = [employeePayrollData];
     }
+    alert("Local Storage Updated Successfully!\nTotal Employees : " + employeePayrollList.length);
+    localStorage.setItem("EmployeePayrollList", JSON.stringify(employeePayrollList));
 
-    alert(employeePayrollList.toString());
-    localStorage.setItem("EmployeePayrollList", JSOn.stringify(employeePayrollList))
 }
 
 const createEmployeePayroll = () => {
