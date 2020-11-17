@@ -8,11 +8,11 @@ class EmployeePayrollData {
         this.departments = params[4];
     }
 
-    get id(){
+    get id() {
         return this._id;
     }
 
-    set id(id){
+    set id(id) {
         this._id = id;
     }
 
@@ -104,7 +104,7 @@ class EmployeePayrollData {
         const options = { year: 'numeric', month: 'long', day: 'numeric' };
         const empDate = this.startDate === undefined ? "undefined" :
             this.startDate.toLocaleDateString("en-US", options);
-
+        this._id = 1;
         return "id: " + this.id + ", name: " + this.name + ", profile Pic: " + this.profilePic + ", salary: " + this.salary + ", gender: "
             + this.gender + ", startDate: " + empDate + ", departments: " + this.departments + ", note: " + this.note;
     }
