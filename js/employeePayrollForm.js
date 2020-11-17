@@ -48,13 +48,7 @@ class EmployeePayrollData {
     }
 
     set gender(gender) {
-        if (this._gender == undefined) {
-            this._gender = "m";
-        } else {
-            let genderRegex = RegExp('^[a-zA-Z]{1}$');
-            if (genderRegex.test(gender)) this._gender = gender;
-            else throw 'Gender is incorrect';
-        }
+        this._gender = gender;
     }
 
     get startDate() {
