@@ -56,11 +56,7 @@ class EmployeePayrollData {
     }
 
     set startDate(startDate) {
-        if (startDate == undefined) {
-            this._startDate = new Date();
-        } else {
-            this._startDate = startDate;
-        }
+        this._startDate = startDate;
     }
 
     get departments() {
@@ -90,7 +86,6 @@ class EmployeePayrollData {
         const options = { year: 'numeric', month: 'long', day: 'numeric' };
         const empDate = this.startDate === undefined ? "undefined" :
             this.startDate.toLocaleDateString("en-US", options);
-        this._id = 1;
         return "id: " + this.id + ", name: " + this.name + ", profile Pic: " + this.profilePic + ", salary: " + this.salary + ", gender: "
             + this.gender + ", startDate: " + empDate + ", departments: " + this.departments + ", note: " + this.note;
     }
@@ -125,6 +120,7 @@ const createEmployeePayroll = () => {
         setTextValue('.text-error', e);
         throw e;
     }
+    employeePayrollData.id = createNewEmployeeId();
     employeePayrollData.profilePic = getSelectedValues('[name=profile]').pop();
     employeePayrollData.gender = getSelectedValues('[name=gender]').pop();
     employeePayrollData.departments = getSelectedValues('[name=departments]');
@@ -153,6 +149,16 @@ const createEmployeePayroll = () => {
     } else {
         alert("Correct details");
     }
+}
+
+const createNewEmployeeId = () => {
+    let empID = localStorage.getItem("EmployeeID");
+    if (empID == undefined) {
+        empID = 0;
+    }
+    empID = !empID ? 1 : (parseInt(empID) + 1).toString();
+    localStorage.setItem("EmployeeID", empID);
+    return empID;
 }
 
 const getSelectedValues = (propertyValue) => {
