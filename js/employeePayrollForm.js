@@ -105,10 +105,29 @@ const save = (event) => {
             createAndUpdateStorage();
             resetForm();
             window.location = "../pages/home.html";
+        } else {
+            createOrUpdateEmployeePayroll();
         }
     } catch (e) {
         return;
     }
+}
+
+const createOrUpdateEmployeePayroll = () => {
+    let postURL = site_properties.server_url;
+    let methodCall = "POST";
+    if (isUpdate) {
+        methodCall = "PUT";
+        postURL = postURL + empPayrollObj.id.toString();
+    }
+    makeServiceCall(methodCall, postURL, true, empPayrollObj)
+        .then(responseText => {
+            resetForm();
+            window.location = "../pages/home.html";
+        })
+        .catch(error => {
+            throw error;
+        });
 }
 
 const setEmployeePayrollObject = () => {
