@@ -209,6 +209,8 @@ function nameCheckRegex(name) {
     return result;
 }
 
+
+
 window.addEventListener('DOMContentLoaded', (event) => {
 
     //event listener for date validation!!!!
