@@ -26,20 +26,7 @@
       "_profilePic": "../assets/profile-images/Ellipse -4.png"
     },
     {
-      "id": 3,
-      "_name": "Dummy",
-      "_gender": "male",
-      "_departments": [
-        "Sales",
-        "HR"
-      ],
-      "_salary": "350000",
-      "_startDate": "09 Apr 2016",
-      "_note": "Hey There dummy buddy....!!",
-      "_profilePic": "../assets/profile-images/Ellipse -5.png"
-    },
-    {
-      "_name": "Narayan",
+      "_name": "Narayannnn",
       "_profilePic": "../assets/profile-images/Ellipse -5.png",
       "_gender": "male",
       "_departments": [
